@@ -9,6 +9,7 @@ from fabric.api import run
 
 
 env.hosts = ["3.83.227.12", "54.164.31.132"]
+env.user = "ubuntu"
 
 
 def do_pack():
@@ -74,3 +75,5 @@ def deploy():
     if file is None:
         return False
     return do_deploy(file)
+
+# deploy()

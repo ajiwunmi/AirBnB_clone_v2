@@ -5,6 +5,7 @@ Fabric script that distributes an archive to your web servers
 
 from datetime import datetime
 from fabric.api import env, local, run, put
+# from fabric import Connection
 import os
 
 env.hosts = ["3.83.227.12", "54.164.31.132"]
@@ -49,12 +50,8 @@ def do_deploy(archive_path):
 
         print("New version deployed!")
         return True
-
+# archive_path = do_pack()
+# print(f'Archive full path is : {archive_path}')
+# print(f'archived_file : {archive_path[9:]}')
+# do_deploy(archive_path)
     return False
-
-
-
-archive_path = do_pack()
-print(f'Archive full path is : {archive_path}')
-print(f'archived_file : {archive_path[9:]}')
-do_deploy(archive_path)
